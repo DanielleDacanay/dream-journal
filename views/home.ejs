@@ -6,6 +6,10 @@
 <% entries.forEach(function(entry) { %>
 <div>
   <h2><%= entry.title %></h2>
-  <p><%= entry.content %></p>
+  <p>
+    <%= entry.content.substring(0,100) %>... 
+    <a href="entries/<%= entry.title %>">Read more</a>
+</p>
+  
 </div>
 <% }); %> <%- include("partials/footer"); -%>
