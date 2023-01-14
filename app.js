@@ -36,6 +36,16 @@ app.get("/compose", function(req, res) {
   res.render("compose");
 });
 
+app.get("/entries/:title", function(req, res) {
+  entries.forEach(function(entry) {
+    const storedTitle = entry.title;
+    
+    if (storedTitle === req.params.title) {
+   return console.log("Match found!");
+   }
+   });
+});
+
 app.post("/compose", function(req,res) {
   const entry = {
     title: req.body.entryTitle,
